@@ -1,0 +1,13 @@
+<script>
+
+let cep = prompt('Digite seu CEP');
+let endpoint = `http://viacep.com.br/ws/${cep}/json/`;
+
+fetch(endpoint).then((result) => {
+    let data = result.json();
+    data.then((body) => {
+        console.log(`${body.logradouro}, ${body.localidade}, ${body.uf}`);
+    });
+});
+
+</script>
